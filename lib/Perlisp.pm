@@ -10,7 +10,7 @@ use experimental 'signatures';
 #     eval(parse(line))
 
 sub parse ( $self, $string ) {
-    my @tokens = map { split / +/ } split /([()])/, $string;
+    my @tokens = split / +/, $string =~ s{([()])}{ $1 }gr;
 }
 
 1;
