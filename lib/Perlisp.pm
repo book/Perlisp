@@ -9,8 +9,8 @@ use experimental 'signatures';
 #   for each line:
 #     eval(parse(line))
 
-sub parse ( $self, $string ) {
-    my @tokens = split / +/, $string =~ s{([()])}{ $1 }gr;
+sub tokenize( $self, $string ) {
+    return grep $_, split / +/, $string =~ s{([()])}{ $1 }gr;
 }
 
 1;
