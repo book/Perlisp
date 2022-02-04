@@ -51,10 +51,6 @@ sub evaluate ( $expr, $env ) {
     }
 }
 
-
-say evaluate( Perlisp::Expr->new( Symbol => 'foo' ), { foo => 1 } );
-say evaluate( Perlisp::Expr->new( Symbol => 'foo' ), {} );
-
 1;
 
 __END__
